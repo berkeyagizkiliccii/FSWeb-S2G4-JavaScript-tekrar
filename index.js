@@ -65,13 +65,13 @@ console.log(CemberinCevresi(5));
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(yaricap,pi) {
-  return Math.pow(yaricap,2);
+function CemberinAlani(yaricap,pii) {
+  return 2*pii*Math.pow(yaricap,2);
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
-console.log(CemberinAlani(15));
+console.log(CemberinAlani(15),pi);
 /* 	GÖREV 3:
 	- Sayfanın en üstünde global değişken olarak tanımlanmış bir sayilar dizisi bulunmaktadır. Bu dizi içinde 0 ile 1000 arasında rasgele oluşturulmuş tam sayılar ve ondalıklı sayılar bulunmaktadır. Bu diziyi kullanarak aşağıdakileri uygulayın:
 		3a. enbuyuk ve enkucuk isminde 2 adet değişken tanımlayın ve sayilar dizisindeki en küçük sayı ile en büyük sayıyı bu değişkenlere atayın. (for döngüsü kullanın)
@@ -101,37 +101,46 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-let enBuyuk = sayilar[0];
+enbuyuk = sayilar[0];
 for(let i =1;i<sayilar.length;i++) {
-  if(enBuyuk<sayilar[i]) {
-    enBuyuk=sayilar[i];
+  if(enbuyuk<sayilar[i]) {
+    enbuyuk=sayilar[i];
   }
 }
 
+enkucuk = sayilar[0];
+for(let i =1;i<sayilar.length;i++) {
+  if(enkucuk>sayilar[i]) {
+    enkucuk=sayilar[i];
+  }
+}
+
+
+
 // 3b çözümü:
-const uceTamBolunenler = [];
+ucetambolunenler = [];
 
 sayilar.forEach((sayi) => {
   if (sayi % 3 === 0) {
-    uceTamBolunenler.push(sayi);
+    ucetambolunenler.push(sayi);
   }
 });
 
 
 // 3c çözümü:
 
-let Toplami = ucetambolunenler.reduce(
+ucebolunenlerintoplami = ucetambolunenler.reduce(
   (toplam, sayi) => toplam + sayi, 0);
 
 
 // 3d çözümü
 
-const besyuzdenKucukler = sayilar.filter((sayi) => sayi < 500);
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 
 
 // 3e çözümü
 
-const siraliSayilar = besyuzdenKucukler.sort((a, b) => a - b);
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 
 // 3f çözümü
 
